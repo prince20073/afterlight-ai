@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0b0b12" />
+  <title>AFTERLIGHT — The Offline Ghost Archive</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+  <header class="topbar">
+    <a class="brand" href="#top" aria-label="Afterlight home"><span class="brand-mark">✳</span> AFTERLIGHT</a>
+    <div class="top-right"><span class="privacy-dot"></span><span>PRIVATE BY DESIGN</span><span class="divider"></span><span id="connectionLabel">LOCAL MODEL · CHECKING</span></div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="eyebrow"><span></span> AN ARCHIVE OF THE UNEXPLAINED <span></span></div>
+      <h1>Some stories<br>refuse to <em>stay buried.</em></h1>
+      <p class="hero-copy">A quiet place for the strange, the forgotten, and the almost remembered.<br>Give a memory a shadow. Let a local AI give it a voice.</p>
+      <div class="hero-meta"><span>01 / THE PROMPT</span><span>NO CLOUD. NO WITNESSES.</span></div>
+    </section>
+
+    <section class="workspace" aria-label="Ghost story generator">
+      <div class="panel prompt-panel">
+        <div class="panel-heading"><div><span class="section-index">01</span><h2>Leave a trace</h2></div><span class="tiny-label">YOUR STORY BEGINS HERE</span></div>
+        <label for="seed">What should the story remember?</label>
+        <textarea id="seed" maxlength="700" placeholder="An old family house where one room was always locked..." spellcheck="true"></textarea>
+        <div class="field-foot"><span>It can be a memory, a place, a person, or a single strange detail.</span><span id="charCount">0 / 700</span></div>
+
+        <div class="controls-grid">
+          <div class="control-group"><label for="mood">ATMOSPHERE</label><select id="mood"><option value="quietly unsettling">Quietly unsettling</option><option value="psychological horror">Psychological horror</option><option value="folklore and mystery">Folklore & mystery</option><option value="melancholic and haunting">Melancholic & haunting</option><option value="classic supernatural horror">Classic supernatural horror</option></select></div>
+          <div class="control-group"><label for="length">LENGTH</label><select id="length"><option value="short (around 250 words)">Short · 250 words</option><option value="medium (around 500 words)" selected>Medium · 500 words</option><option value="long (around 800 words)">Long · 800 words</option></select></div>
+        </div>
+        <button id="generateBtn" class="generate-btn"><span class="button-icon">✧</span><span id="buttonText">SUMMON A STORY</span><span class="button-arrow">↗</span></button>
+        <p class="privacy-note"><span>◈</span> Your prompt is sent only to your local Ollama model. It is not uploaded to a hosted AI service.</p>
+      </div>
+
+      <div class="panel result-panel">
+        <div class="panel-heading result-heading"><div><span class="section-index">02</span><h2>The other side</h2></div><div class="result-actions"><button id="copyBtn" class="text-btn" disabled> COPY </button><button id="downloadBtn" class="text-btn" disabled> SAVE TXT ↓ </button></div></div>
+        <div id="storyOutput" class="story-output" aria-live="polite">
+          <div class="empty-state"><div class="moon">☾</div><p class="empty-title">The archive is waiting.</p><p class="empty-copy">Your story will appear here, shaped by the details you leave behind.</p><div class="empty-rule"></div><span>LISTEN CLOSELY</span></div>
+        </div>
+        <div class="result-bottom"><span id="storyStatus">AWAITING A SIGNAL</span><span>AFTERLIGHT ARCHIVE · VOL. 001</span></div>
+      </div>
+    </section>
+
+    <section class="how-section">
+      <div class="how-title"><span class="section-index">03</span><h2>Made to work in the dark.</h2></div>
+      <div class="how-grid">
+        <article><span class="feature-icon">◉</span><h3>Open-weight intelligence</h3><p>Runs with a model you choose through Ollama. Swap models without rebuilding the experience.</p></article>
+        <article><span class="feature-icon">⌁</span><h3>Your machine. Your memories.</h3><p>Prompts go to localhost, not a remote AI provider. Keep personal stories on your own device.</p></article>
+        <article><span class="feature-icon">☼</span><h3>Offline after setup</h3><p>Download Ollama and a model once. Then generate stories locally, even without internet access.</p></article>
+      </div>
+    </section>
+
+    <footer><span>AFTERLIGHT © 2026</span><span>THE PAST IS NEVER COMPLETELY QUIET.</span><span>BUILT WITH OPEN AI</span></footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
